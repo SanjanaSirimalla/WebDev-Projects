@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    /* these align-items(vertically center) and justify-content(horizontally center) 
+    are used to bring content to the center of the page */
+    align-items: center;  
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    /* 90 viewport-width means it occupies 90% of possible width of screen */
+    width: 90vw;
+}
+.card{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    /* it is 80% of available viewport height */
+    height: 80vh;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+    /* to make all image cards equal in size */
+    flex: 0.5;
+    position: relative;
+    /* for transition, first we mention property, then time, and then type of transition */
+    transition: flex 0.7s ease-in;
+}
+.card h3{
+    font-size: 25px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    opacity: 0;
+}
+.card.active{
+    /* to increase card length of active card */
+    flex: 5;
+}
+.card.active h3{
+    opacity: 1;
+}
+
+@media(max-width: 480px){
+    /* in small devices,to occupy 100% of width */
+    .container{
+        width: 100vw;
+    }
+    /* to skip 4,5 cards in small devices */
+    .card:nth-of-type(4),.card:nth-of-type(5){
+        display: none;
+    }
+}
