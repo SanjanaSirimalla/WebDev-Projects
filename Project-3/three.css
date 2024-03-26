@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:rgb(237, 235, 235);
+}
+h1{
+    margin: 50px 0 30px;
+    text-align: center;
+}
+.faq-container{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.faq{
+    border: 1px solid rgb(109, 108, 108);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 30px;
+    /* position is kept relative to each faq box, if not kept so,goes to top of page */
+    position: relative;
+    /* for content not to come out of boundaries */
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+.faq.active{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.faq-text{
+    display: none;
+    margin: 20px 0 0;
+}
+.faq.active .faq-text{
+    display: block;
+}
+.faq-toggle{
+    /* when button not active, it appears to be transparent */
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    font-size: 1rem;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+.faq-toggle .fa-times{
+    display: none;
+}
+.faq.active .faq-toggle .fa-times{
+    color: white;
+    display: block;
+}
+.faq.active .faq-toggle .fa-chevron-down{
+    display: none;
+}
+.faq.active .faq-toggle{
+    background-color: darkgray;
+}
+
+
+
+
+
