@@ -23,7 +23,6 @@ h1{
     position: relative;
     /* for content not to come out of boundaries */
     overflow: hidden;
-    transition: 0.2s ease;
 }
 .faq.active{
     background-color: white;
